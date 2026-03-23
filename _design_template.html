@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ページ名 | llgenll's</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+      <!-- <div class="big-logo">
+        <h1 class="big-logo__text">llgenll's</h1>
+      </div> -->
+      <div class="logo"><a href="/" class="logo__text">llgenll's</a></div>
+    </div>
+    <div class="updated">updated: 2026-03-21</div>
+  </header>
+  <nav class="in-pgage">
+    <div class="inner">
+      <ul>
+        <li><a href="#ss-doc">文章</a></li>
+        <li><a href="#ss-form">フォーム</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <!-- 文章セクション -->
+    <section>
+      <h1 class="font-size--xxxlarge">ページ名 <code>h1</code></h1>
+      <code>section</code>
+      <h2 class="font-size--xxlarge" id="ss-doc"><em>部: </em>文章セクション<code>em</code> <code>h2</code></h2>
+      <h3 class="font-size--xlarge"><em>章: </em> サンプルのテキスト<code>h3</code></h3>
+      <p><mark>以下の文章はサンプルのテキストです。</mark> <code>mark</code></p>
+      <p><em>小段落（形式段落）: </em>むかしむかし<a href>あるところ</a><code>a</code>におじさんとそのむすこが住んでいました。<code>p</code></p>
+      <p>おじさんは<ins>仕事のやま</ins><code>ins</code>にしばかりに、むすこは家でAIのファインチューニングをすすめていました。</p>
+      <p>すると宇宙の方からどんぶらこどんぶらこと大きな<del>みどりいろの</del><code>del</code>ももが流れてきました。<br>
+      おじさんのむすこがおじさんの作ったほうちょうで切りましたが、<span class="is_ng">いきおいあまって</span><code>span.is_ng</code><mark class="is_ng">おうちをこわし</mark><code>mark.is_ng</code>てしまいました。</p>
+      <div class="align--center">
+        <figure>
+          <picture>
+            <source
+              srcset="/images/img_elm_sunset-s.jpg 200w, /images/img_elm_sunset-l.jpg 1919w"
+              sizes="(width <= 500px) 200px, 450px">
+            <img
+              src="/images/img_elm_sunset-s.jpg"
+              alt="日没の風景">
+          </picture>
+          <figcaption>日没の風景</figcaption>
+        </figure><br>
+        <code>(figure + figcaption) > picture > img</code>
+      </div>
+      <img src="/images/img_elm_sunset-s.jpg" alt="日没" class="float--i-start margin-b-start--xlarge" style="width: 4rem;">
+      <p>ひどいめにあって、おじさんは<s>おもいしょうがいをおうこと</s>ふわふわになりました。それでもおじさんは<span class="is_ok">作ることが</span> <code>span.is_ok</code><mark class="is_ok">大好き</mark> <code>mark.is_ok</code>でした。しばらくしておじさんはむすこと再会しました。</p>
+      <img src="/images/img_elm_sunset-s.jpg" alt="日没" class="float--i-end" style="width: 4rem;">
+      <p>おじさんはついかかいはつしたきかいをむすこにおしつけましたが、むすこからはあきれられてしまいました。<s>おきゃくさま</s> <code>s</code> むすこがほんとうにほしかったものとはかけはなれていたのです。</p>
+      <div class="horizontal-scroll">
+        <!-- preはhtml中のスペースや改行をそのまま表示する -->
+        <!-- コードの表示に適しているが、余計な余白が発生しないよう注意が必要 -->
+<pre>
+const zak = 2;
+const gdm = 1;
+function invadeColony(_ms) {
+  if (gdm) {
+    return false;
+  } else {
+    return true;
+  }
+}
+const result = invadeColony(zak);
+</pre>
+      </div>
+      <code>pre</code>
+      <h4 class="font-size--large"><em>節: </em><code>h4</code></h4>
+      <p>節のサンプルテキスト。</p>
+      <h5 class="font-size--medium"><em>小節: </em><code>h5</code></h5>
+      <p>小節のサンプルテキスト。</p>
+      <h6 class="font-size--medium"><em>小小節: </em><code>h6</code></h6>
+      <p>小小節のサンプルテキスト。</p>
+      <ul>
+        <li><span>リスト項目１</span><code>ul > li</code></li>
+        <li><span>リスト項目２</span></li>
+        <li><span>リスト項目３</span></li>
+      </ul>
+      <p>順番のないリスト（スタイルなし）</p>
+      <ul class="style-none">
+        <li><span>リスト項目１</span><code>ul.style-none > li</code></li>
+        <li><span>リスト項目２</span></li>
+        <li><span>リスト項目３</span></li>
+      </ul>
+      <p>順番のあるリスト</p>
+      <ol>
+        <li><span>リスト項目１</span><code>ol > li</code></li>
+        <li><span>リスト項目２</span></li>
+        <li><span>リスト項目３</span></li>
+      </ol>
+      <p>定義リスト</p>
+      <dl>
+        <dt><span>定義項目１</span><code>dl > dt, dl > dd</code></dt>
+        <dd><span>定義内容１</span></dd>
+        <dt><span>定義項目２</span></dt>
+        <dd><span>定義内容２</span></dd>
+        <dt><span>定義項目３</span></dt>
+        <dd><span>定義内容３</span></dd>
+      </dl>
+    </section>
+    <hr>
+    <!-- 表セクション -->
+    <section>
+      <h2 class="font-size--xxlarge" id="ss-table">表セクション</h2>
+      <table class>
+        <caption>列の少ない表</caption>
+        <colgroup>
+          <col>
+          <col>
+        </colgroup>
+        <tr>
+          <th class="align--right">大文字アイ、小文字エル、数字いち</th>
+          <td><span>Il1</span></td>
+        </tr>
+        <tr>
+          <th class="align--right">小文字ビー、ディー</th>
+          <td><span>bd</span></td>
+        </tr>
+        <tr>
+          <th class="align--right">小文字ピー、キュー</th>
+          <td><span>pq</span></td>
+        </tr>
+        <tr>
+          <th class="align--right">小文字エフ、ティ―</th>
+          <td><span>ft</span></td>
+        </tr>
+        <tr>
+          <th class="align--right">小文字アイ、ジェイ</th>
+          <td><span>ij</span></td>
+        </tr>
+        <tr>
+          <th class="align--right">小文字エム、ダブリュー</th>
+          <td><span>mw</span></td>
+        </tr>
+        <tr>
+          <th class="align--right">小文字エヌ、ユー</th>
+          <td><span>nu</span></td>
+        </tr>
+      </table>
+      <hr>
+      <div class="horizontal-scroll">
+        <table class>
+          <caption>列の多い表</caption>
+          <tr>
+            <th>項目名１</th>
+            <th>項目名２</th>
+            <th>項目名３</th>
+            <th>項目名４</th>
+            <th>項目名５</th>
+            <th>項目名６</th>
+            <th>項目名７</th>
+            <th>項目名８</th>
+            <th>項目名９</th>
+            <th>項目名１０</th>
+          </tr>
+          <tr>
+            <td><span>内容１</span></td>
+            <td><span>内容２</span></td>
+            <td><span>内容３</span></td>
+            <td><span>内容４</span></td>
+            <td><span>内容５</span></td>
+            <td><span>内容６</span></td>
+            <td><span>内容７</span></td>
+            <td><span>内容８</span></td>
+            <td><span>内容９</span></td>
+            <td><span>内容１０</span></td>
+          </tr>
+          <tr>
+            <td><span>内容１</span></td>
+            <td><span>内容２</span></td>
+            <td><span>内容３</span></td>
+            <td><span>内容４</span></td>
+            <td><span>内容５</span></td>
+            <td><span>内容６</span></td>
+            <td><span>内容７</span></td>
+            <td><span>内容８</span></td>
+            <td><span>内容９</span></td>
+            <td><span>内容１０</span></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <hr>
+    <!-- フォームセクション -->
+    <section>
+      <h2 class="font-size--xxlarge" id="ss-form">フォームセクション</h2>
+      <form action="" name="templateForm">
+        <fieldset>
+          <legend>テキスト入力 <code>fieldset</code></legend>
+          <ul class="style-none">
+            <li>
+              <label for="textInput">1行テキスト <code>input[type=text]</code></label>
+              <input type="text" id="textInput">
+            </li>
+            <li>
+              <label for="passwordInput">パスワード <code>input[type=password]</code></label>
+              <input
+                type="password"
+                id="passwordInput"
+                minlength="8"
+                maxlength="16"
+                title="8文字〜16文字で入力してください。大文字・小文字・数字・記号を組み合わせると安全です。"
+                pattern="^[A-Za-z\d!-/:-@\[-`{-~]+$"
+                required>
+              <span id="password-validation" class="validation-message">8文字〜16文字で入力してください。大文字・小文字・数字・記号を組み合わせると安全です。</span>
+            </li>
+            <li>
+              <label for="pinInput">PIN <code>input[type=password]</code></label>
+              <input
+                type="password"
+                id="pinInput"
+                minlength="4"
+                maxlength="6"
+                title="4桁〜6桁の数字を入力してください。"
+                pattern="^\d{4,6}$"
+                inputmode="numeric"
+                autocomplete="off"
+                required>
+              <span id="pin-validation" class="validation-message">4桁〜6桁の数字を入力してください。</span>
+            </li>
+            <li>
+              <label for="textArea">複数行テキスト <code>textarea</code></label>
+              <textarea id="textArea"></textarea>
+            </li>
+            <li>
+              <label for="email">1行テキスト（電子メールアドレス） <code>input[type=email]</code></label>
+              <input type="email" id="email" title="メールアドレスを入力してください。" pattern=".+@.+\..+"
+                placeholder="gfff@dmmm.glgg" aria-describedby="email-validation" required>
+              <span id="email-validation" class="validation-message">gfff@dmmm.glggの形式で有効なメールアドレスを入力してください。</span>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>ひとつを選択</legend>
+          <ul class="style-none">
+            <li>ラジオボタン <code>input[type=radio]</code>
+              <ul class="style-none flex gap-large">
+                <li>
+                  <input type="radio" name="radio" id="radio1">
+                  <label for="radio1">ラジオボタン 1</label>
+                </li>
+                <li>
+                  <input type="radio" name="radio" id="radio2">
+                  <label for="radio2">ラジオボタン 2</label>
+                </li>
+                <li>
+                  <input type="radio" name="radio" id="radio3">
+                  <label for="radio3">ラジオボタン 3</label>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <label for="select">ドロップダウン <code>select</code></label>
+              <select name="select" id="select">
+                <option value="option1">オプション1</option>
+                <option value="option2">オプション2</option>
+                <option value="option3">オプション3</option>
+              </select>
+            </li>
+            <li>
+              <label for="color">色 <code>input[type=color]</code></label>
+              <input type="color" id="color" value="#ff0000">
+            </li>
+            <li>
+              <label for="month">年月 <code>input[type=month]</code></label>
+              <input type="month" id="month" value="">
+            </li>
+            <li>
+              <label for="date">日付 <code>input[type=date]</code></label>
+              <input type="date" id="date" value="">
+            </li>
+            <li>
+              <label for="datetime-local">日時 <code>input[type=datetime-local]</code></label>
+              <input type="datetime-local" id="datetime-local" name="datetime-local" value="2026-03-16T12:00"
+                min="2026-03-17T12:00" max="2027-03-16T12:00">
+            </li>
+            <li>
+              <label for="range">範囲 <code>input[type=range]</code></label>
+              <div class="flex">
+                <input type="range" id="range" min="1" max="10" step="1" value="1">
+                <span class="range_display"></span>
+              </div>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>ボタン入力</legend>
+          <ul class="style-none flex">
+            <li>
+              <input type="submit" name="button_i_submit" value="input[type=submit]">
+            </li>
+            <li>
+              <input type="reset" name="button_i_reset" value="input[type=reset]">
+            </li>
+            <li>
+              <input type="button" name="button_i_button" value="input[type=button]">
+            </li>
+            <li>
+              <button name="button_b_submit" type="submit">button[type=submit]</button>
+            </li>
+            <li>
+              <button name="button_b_reset" type="reset">button[type=reset]</button>
+            </li>
+            <li>
+              <button name="button_b_button" type="button">button[type=button]</button>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>ボタンのセマンティクス</legend>
+          <ul class="style-none flex">
+            <li>
+              <button type="button" class="button--primary">primary</button>
+            </li>
+            <li>
+              <button type="button" class="button--secondary">secondary</button>
+            </li>
+            <li>
+              <button type="button" class="button--tartiary">tartiary</button>
+            </li>
+            <li>
+              <button type="button" class="button--danger">danger</button>
+            </li>
+            <li>
+              <button type="button">normal</button>
+            </li>
+          </ul>
+          <ul class="style-none flex">
+            <li>
+              <button type="button" class="button--primary button--xlarge">どうぞどうぞ</button>
+            </li>
+            <li>
+              <button type="button" class="button--secondary button--large">いやいや</button>
+            </li>
+            <li>
+              <button type="button" class="button--tartiary">必要なら</button>
+            </li>
+            <li>
+              <button type="button" class="button--danger">本当に？</button>
+            </li>
+            <li>
+              <button type="button">とりあえず</button>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </section>
+  <hr class="xxxlarge">
+  </main>
+  <footer>
+    <div class="inner">
+      <span class="font-size--small">このサイトは製作、更新時の情報を掲載しています。<br>最新の情報とは異なる場合があります。</span><br>
+      <span class="font-size--small">© llgenll, 2026</span>
+    </div>
+  </footer>
+</body>
+
+</html>
