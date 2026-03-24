@@ -2,7 +2,7 @@
   "configurations": [
     {
       "type": "chrome",
-      "name": "Launch Chrome",
+      "name": "Launch Chrome (needs Live Preview with root settings)",
       "request": "launch",
       "webRoot": "${workspaceFolder}",
       "url": "http://127.0.0.1:3000/"
