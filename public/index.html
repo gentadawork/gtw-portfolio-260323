@@ -24,8 +24,8 @@
       <ul>
         <li><a href="#ss-aboutme">自己紹介</a></li>
         <li><a href="#ss-jobs">職歴</a></li>
-        <li><a href="#ss-interests">興味関心</a></li>
-        <li><a href="#ss-contact">お問い合わせ</a></li>
+        <li hidden><a href="#ss-interests">興味関心</a></li> <!-- TODO:追加実装、実装するまで非表示 -->
+        <li hidden><a href="#ss-contact">お問い合わせ</a></li> <!-- TODO:追加実装、実装するまで非表示 -->
       </ul>
     </div>
   </nav>
@@ -33,7 +33,8 @@
     <section id="ss-welcome">
       <h2 class="font-size--xxlarge">このサイトについて</h2>
       <p>お忙しい中、お時間を割いていただき、ありがとうございます。</p>
-      <p>このサイトはわたし（<em>@llgenll</em>）自身やわたしの生業、関心事などをご紹介するサイトです。ご不明点などありましたら<a href="#ss-contact">お問い合わせ</a>よりご連絡ください。</p>
+      <p>このサイトはわたし（<em>@llgenll</em>）自身やわたしの生業、関心事などをご紹介するサイトです。</p>
+      <!-- TODO: ss-contact セクション実装時にお問い合わせ導線を再度追加する -->
     </section>
     <hr class="xxlarge">
     <section id="ss-aboutme">
@@ -81,12 +82,12 @@
           </ul></li>
       </ul>
     </section>
-    <hr class="xxlarge">
-    <section id="ss-interests">
+    <hr class="xxlarge" hidden> <!-- TODO:追加実装、実装するまで非表示 -->
+    <section id="ss-interests" hidden> <!-- TODO:追加実装、実装するまで非表示 -->
       <h2 class="font-size--xxlarge">興味関心</h2>
     </section>
-    <hr class="xxlarge">
-    <section id="ss-contact">
+    <hr class="xxlarge" hidden> <!-- TODO:追加実装、実装するまで非表示 -->
+    <section id="ss-contact" hidden> <!-- TODO:追加実装、実装するまで非表示 -->
       <h2 class="font-size--xxlarge">お問い合わせ</h2>
     </section>
     <hr class="xxxlarge">
