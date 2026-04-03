@@ -1,4 +1,4 @@
-/* # style.css */
+/* # base.css */
 /* ## Variables: Sizes */
 :root {
   /* Fonts  */
@@ -247,6 +247,12 @@
     color: var(--color-text-header);
     background: var(--header-img) transparent no-repeat center 50% / cover;
 
+    /* 先頭に固定する */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: stretch;
+
     .inner {
       backdrop-filter: var(--filter-bg-header);
 
@@ -256,7 +262,7 @@
 
       margin: 0 auto;
       max-width: calc(var(--font-size-base) * var(--letters-in-row) + var(--space-xxxlarge) * 2);
-      padding: var(--space-xxlarge) var(--space-medium);
+      padding: var(--space-xlarge) var(--space-medium);
     }
     .updated {
       background-color: var(--color-bg-code);
@@ -273,6 +279,7 @@
 
   nav.in-pgage {
     /* background-color: var(--color-bg-header); */
+    margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-small) * 2 + var(--line-height-medium));
 
     .inner {
       align-items: center;
@@ -331,7 +338,7 @@
     border-radius: var(--border-radius-large);
     margin-block-end: var(--space-large);
     margin-inline: var(--space-medium);
-    padding: var(--space-large) var(--space-xxxlarge) var(--space-xxlarge);
+    padding: var(--space-large) var(--space-xxxlarge);
 
     &:first-child {
       margin-block-start: -1px;
@@ -534,7 +541,8 @@
     .big-logo__text {
       color: var(--color-bg);
       font-size: calc(var(--font-size-xxxlarge));
-      line-height: calc(var(--line-height-xxlarge));
+      line-height: 1;
+      margin: 0;
     }
     .light-on {
       text-shadow: var(--space-small) 0 .3em var(--color-secondary);
