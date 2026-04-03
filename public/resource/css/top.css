@@ -1,0 +1,44 @@
+/* トップページ(/index.html)用スタイル */
+:root {
+  scroll-timeline-name: --root-scroll-timeline;
+}
+
+#TOP001 .big-logo {
+  animation: big-logo-transition linear;
+  animation-timeline: --root-scroll-timeline;
+}
+@keyframes big-logo-transition {
+  0% {
+    border-radius: var(--border-radius-large);
+    padding: 0 var(--space-xxlarge) var(--space-medium);
+  }
+  8%, 100% {
+    border-radius: var(--border-radius-medium);
+    padding: var(--space-small) var(--space-large) var(--space-small);
+  }
+}
+
+#TOP001 .big-logo__text {
+  animation: big-logo__text-transition linear;
+  animation-timeline: --root-scroll-timeline;
+}
+@keyframes big-logo__text-transition {
+  0% {
+    font-size: calc(var(--font-size-xxxlarge) * 2);
+    line-height: calc(var(--line-height-xxxlarge) * 2);
+  }
+  8%, 100% {
+    font-size: var(--font-size-medium);
+    font-weight: 800;
+    line-height: var(--line-height-medium);
+  }
+}
+
+#TOP001 nav.in-pgage {
+  margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-medium) + var(--font-size-xxxlarge) * 4);
+}
+@media screen and (768px <= width) {
+  #TOP001 nav.in-pgage {
+    margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-medium) + var(--line-height-xxxlarge) * 2);
+  }
+}
