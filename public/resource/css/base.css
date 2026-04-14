@@ -248,9 +248,6 @@
     background: var(--header-img) transparent no-repeat center 50% / cover;
 
     width: 100%;
-    @supports (width: stretch) {
-      width: stretch;
-    }
 
     .inner {
       backdrop-filter: var(--filter-bg-header);
@@ -572,12 +569,12 @@
     padding: 0;
     display: block;
     padding: var(--space-large);
-    width: fit-content;
+    min-width: fit-content;
   }
   /* コードブロック（pre、PC） */
   @media screen and (768px <= width) {
     pre{
-      width: stretch;
+      width: 100%;
     }
   }
   /* 強調 */
@@ -674,6 +671,11 @@
     max-width: 100%;
     padding-block-end: var(--space-medium);
     padding-inline-end: var(--space-medium);  /* スクロールバーのスペースを確保 */
+
+    &:has(>pre) {
+      padding-block-end: 0 !important;
+      padding-inline-end: 0 !important;
+    }
 
     th {
       white-space: nowrap;
