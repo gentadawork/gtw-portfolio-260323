@@ -3,9 +3,21 @@
   scroll-timeline-name: --root-scroll-timeline;
 }
 
+#TOP001 header {
+  @supports (animation-timeline: --root-scroll-timeline) {
+    /* スクロール駆動アニメーションがきかないブラウザではページ先頭に固定する */
+    /* スクロール駆動アニメーションがきかないブラウザでは固定しない */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+}
+
 #TOP001 .big-logo {
-  animation: big-logo-transition linear;
-  animation-timeline: --root-scroll-timeline;
+  @supports (animation-timeline: --root-scroll-timeline) {
+    animation: big-logo-transition linear;
+    animation-timeline: --root-scroll-timeline;
+  }
 }
 @keyframes big-logo-transition {
   0% {
@@ -19,8 +31,10 @@
 }
 
 #TOP001 .big-logo__text {
-  animation: big-logo__text-transition linear;
-  animation-timeline: --root-scroll-timeline;
+  @supports (animation-timeline: --root-scroll-timeline) {
+    animation: big-logo__text-transition linear;
+    animation-timeline: --root-scroll-timeline;
+  }
 }
 @keyframes big-logo__text-transition {
   0% {
@@ -35,10 +49,16 @@
 }
 
 #TOP001 nav.in-pgage {
-  margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-medium) + var(--font-size-xxxlarge) * 4);
+  margin-block-start: 0;
+  @supports (animation-timeline: --root-scroll-timeline) {
+    margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-medium) + var(--font-size-xxxlarge) * 4);
+  }
 }
 @media screen and (768px <= width) {
   #TOP001 nav.in-pgage {
-    margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-medium) + var(--line-height-xxxlarge) * 2);
+    margin-block-start: 0;
+    @supports (animation-timeline: --root-scroll-timeline) {
+      margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-medium) + var(--line-height-xxxlarge) * 2);
+    }
   }
 }

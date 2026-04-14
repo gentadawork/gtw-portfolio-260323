@@ -247,11 +247,10 @@
     color: var(--color-text-header);
     background: var(--header-img) transparent no-repeat center 50% / cover;
 
-    /* 先頭に固定する */
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    width: stretch;
+    width: 100%;
+    @supports (width: stretch) {
+      width: stretch;
+    }
 
     .inner {
       backdrop-filter: var(--filter-bg-header);
@@ -540,23 +539,12 @@
     
     .big-logo__text {
       color: var(--color-bg);
-      font-size: calc(var(--font-size-xxxlarge));
-      line-height: 1;
+      font-size: calc(var(--font-size-xxxlarge) * 2);
+      line-height: calc(var(--line-height-xxxlarge) * 2);
       margin: 0;
     }
     .light-on {
       text-shadow: var(--space-small) 0 .3em var(--color-secondary);
-    }
-  }
-  /* PC */
-  @media screen and (768px <= width) {
-    .big-logo {
-      /* box-shadow: 0 var(--space-medium) 0 var(--color-secondary); */
-
-      .big-logo__text {
-        font-size: calc(var(--font-size-xxxlarge) * 2);
-        line-height: calc(var(--line-height-xxxlarge) * 2);
-      }
     }
   }
   /* インラインコード（code） */
