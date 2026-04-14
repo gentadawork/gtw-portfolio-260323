@@ -10,6 +10,17 @@
     position: fixed;
     top: 0;
     z-index: 1000;
+
+    animation: header-transition linear;
+    animation-timeline: --root-scroll-timeline;
+  }
+}
+@keyframes header-transition {
+  0%, 8% {
+    top: 0;
+  }
+  32%, 100% {
+    top: -100%;
   }
 }
 
