@@ -275,7 +275,6 @@
 
   nav.in-pgage {
     /* background-color: var(--color-bg-header); */
-    margin-block-start: calc(var(--space-xlarge) * 2 + var(--space-small) * 2 + var(--line-height-medium));
 
     .inner {
       align-items: center;
