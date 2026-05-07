@@ -2,7 +2,7 @@
 const RSS_URL = "https://note.com/llgenll8165/rss";
 const PROXY_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
 const FETCH_NUMBER = 5; // 表示する件数
-const SS_INTERESTS = document.querySelector("#ss_interests");
+const SS_INTERESTS = document.querySelector("#ss-interests");
 
 try {
   fetch(PROXY_URL)
