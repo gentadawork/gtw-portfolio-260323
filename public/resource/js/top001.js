@@ -41,7 +41,7 @@ fetch(PROXY_URL)
       a.textContent = item.title;
       li.appendChild(a);
       const pubDate = new Date(item.pubDate);
-      li.appendChild(document.createTextNode(` - ${pubDate.toISOString().split('T')[0]}`));
+      li.appendChild(document.createTextNode(` - ${pubDate.toLocaleDateString()}`));
       note_list.appendChild(li);
     });
   })
