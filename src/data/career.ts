@@ -8,7 +8,7 @@ export const careerEntries: readonly CareerEntry[] = [
       {
         date: '2024年4月',
         roles: '部署マネージャー、プロジェクトリーダー、テックリード',
-        skills: ['Cyboze kintone', 'HTML', 'CSS', 'JavaScript（Vanilla、jQuery）', 'UI設計', 'Microsoft Excel']
+        skills: ['Cybozu kintone', 'HTML', 'CSS', 'JavaScript（Vanilla、jQuery）', 'UI設計', 'Microsoft Excel']
       },
       {
         date: '2016年4月',

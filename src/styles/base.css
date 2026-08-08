@@ -50,7 +50,7 @@
   /* 配色 */
   --color-primary: #1e87e3;
   --color-secondary: #d8edfc;
-  --color-tartiary: #273440;
+  --color-tertiary: #273440;
   --color-background: #faf6ed;
   --color-accent: #f5a525;
   --color-cmn-black: #333333;
@@ -77,7 +77,7 @@
   /* テキストの色 */
   --color-text: var(--color-cmn-black);
   --color-text-link: var(--color-primary);
-  --color-text-link-hover: var(--color-tartiary);
+  --color-text-link-hover: var(--color-tertiary);
   --color-text-link-visited: var(--color-primary);
   --color-text-header: var(--color-cmn-black);
   --color-text-in-page-nav: var(--color-cmn-black);
@@ -85,14 +85,14 @@
   --color-text-em: #4d4d4d;
   --color-text-button-primary: var(--color-cmn-white);
   --color-text-button-secondary: var(--color-primary);
-  --color-text-button-tartiary: var(--color-cmn-white);
+  --color-text-button-tertiary: var(--color-cmn-white);
 }
 @media (prefers-color-scheme: dark) {
   :root {
   /* 配色 */
     --color-primary: #efb46a;
     --color-secondary: #a36519;
-    --color-tartiary: #f4d6b2;
+    --color-tertiary: #f4d6b2;
     --color-background: #273542;
     --color-accent: #24b5fa;
     --color-cmn-black: #25303b;
@@ -116,14 +116,14 @@
     /* テキストの色 */
     --color-text: var(--color-cmn-white);
     /* --color-text-link: var(--color-secondary); */
-    /* --color-text-link-visited: var(--color-tartiary); */
+    /* --color-text-link-visited: var(--color-tertiary); */
     --color-text-header: var(--color-cmn-white);
     --color-text-in-page-nav: var(--color-cmn-white);
     --color-text-footer: var(--color-cmn-white);
     --color-text-em: #dedede;
     --color-text-button-primary: var(--color-cmn-black);
     --color-text-button-secondary: var(--color-primary);
-    --color-text-button-tartiary: var(--color-secondary);
+    --color-text-button-tertiary: var(--color-secondary);
   }
 }
 
@@ -632,10 +632,10 @@
       border-color: var(--color-text-button-secondary);
       color: var(--color-text-button-secondary);
     }
-    &.button--tartiary {
-      background-color: var(--color-tartiary);
-      border-color: var(--color-text-button-tartiary);
-      color: var(--color-text-button-tartiary);
+    &.button--tertiary {
+      background-color: var(--color-tertiary);
+      border-color: var(--color-text-button-tertiary);
+      color: var(--color-text-button-tertiary);
     }
     &.button--danger {
       background-color: var(--color-sem-ng-border);
