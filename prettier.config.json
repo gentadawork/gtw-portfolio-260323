@@ -1,7 +1,6 @@
 {
   "bracketSpacing": true,
   "htmlWhitespaceSensitivity": "ignore",
-  "jsxBracketSameLine": false,
   "proseWrap": "preserve",
   "semi": true,
   "tabWidth": 2,

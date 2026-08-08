@@ -1,0 +1,18 @@
+// base.css → top.css の順を厳守する（@layer の宣言順が優先順位を決めるため）
+import './styles/base.css';
+import './styles/top.css';
+
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { App } from './App';
+
+const rootElement = document.querySelector('#root');
+if (!rootElement) {
+  throw new Error('マウント先の #root が見つかりません');
+}
+
+createRoot(rootElement).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
