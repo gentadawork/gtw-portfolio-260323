@@ -1,2 +1,16 @@
 // VSCのワークスペースファイルをGit管理から除外するための設定
 *.code-workspace
+
+# 依存パッケージ
+node_modules/
+
+# ビルド成果物
+dist/
+
+# ローカル専用の環境ファイル
+*.local
+.env.local
+.env.*.local
+
+# ログ
+npm-debug.log*
