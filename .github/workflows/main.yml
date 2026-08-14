@@ -31,8 +31,12 @@ jobs:
         run: npm ci
 
       # 型チェック + Vite ビルド。成果物は ./dist/ に出力される
+      # VITE_GTM_ID は GitHub Actions の Variables に設定しておく
+      # GTM IDは公開される値なので、Secret ではなく Variable でOK
       - name: Build
         run: npm run build
+        env:
+          VITE_GTM_ID: ${{ vars.VITE_GTM_ID }}
 
       # Runs a single command using the runners shell
       - name: Sync files
