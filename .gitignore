@@ -12,5 +12,8 @@ dist/
 .env.local
 .env.*.local
 
+# 本番用環境ファイル
+.env.production
+
 # ログ
 npm-debug.log*
