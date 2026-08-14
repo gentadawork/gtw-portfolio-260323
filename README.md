@@ -6,6 +6,8 @@
 
 Vite + React 19 + TypeScript。スタイルは素のCSS（`@layer` / ネスト / スクロール駆動アニメーション / `prefers-color-scheme` によるダークモード）で、CSS-in-JSやCSSフレームワークは使っていません。設計思想は [spec.md](./spec.md) を参照してください。
 
+Google Tag Manager を導入しています。
+
 ## 開発の手順
 
 ```sh

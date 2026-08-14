@@ -6,6 +6,12 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 
+import TagManager from 'react-gtm-module'
+const tagManagerArgs = {
+    gtmId: 'GTM-K3NT2SST'
+}
+TagManager.initialize(tagManagerArgs);
+
 const rootElement = document.querySelector('#root');
 if (!rootElement) {
   throw new Error('マウント先の #root が見つかりません');
