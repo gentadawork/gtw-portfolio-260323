@@ -6,7 +6,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';
 
-import TagManager from 'react-gtm-module'
+import TagManager from 'react-gtm-module';
 
 const gtmId = import.meta.env.VITE_GTM_ID?.trim();
 if (import.meta.env.PROD && gtmId) {

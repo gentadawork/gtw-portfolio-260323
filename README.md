@@ -7,7 +7,7 @@
 Vite + React 19 + TypeScript。スタイルは素のCSS（`@layer` / ネスト / スクロール駆動アニメーション / `prefers-color-scheme` によるダークモード）で、CSS-in-JSやCSSフレームワークは使っていません。設計思想は [spec.md](./spec.md) を参照してください。
 
 Google Tag Manager を導入しています。
-開発時に計測しないよう、開発時は初期化しません。GTM IDは本番用環境変数を記載した '.env.production' に記載します。
+開発時に計測しないよう、開発時は初期化しません。GTM IDは本番用環境変数 `VITE_GTM_ID` を記載した `.env.production` に記載します。
 
 ## 開発の手順
 
