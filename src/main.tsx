@@ -7,10 +7,11 @@ import { createRoot } from 'react-dom/client';
 import { App } from './App';
 
 import TagManager from 'react-gtm-module'
-const tagManagerArgs = {
-    gtmId: 'GTM-K3NT2SST'
+
+const gtmId = import.meta.env.VITE_GTM_ID?.trim();
+if (import.meta.env.PROD && gtmId) {
+  TagManager.initialize({ gtmId });
 }
-TagManager.initialize(tagManagerArgs);
 
 const rootElement = document.querySelector('#root');
 if (!rootElement) {
