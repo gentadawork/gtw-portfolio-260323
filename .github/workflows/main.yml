@@ -34,9 +34,14 @@ jobs:
       # VITE_GTM_ID は GitHub Actions の Variables に設定しておく
       # GTM IDは公開される値なので、Secret ではなく Variable でOK
       - name: Build
-        run: npm run build
         env:
           VITE_GTM_ID: ${{ vars.VITE_GTM_ID }}
+        run: |
+          if [ -z "${VITE_GTM_ID}" ]; then
+            echo "VITE_GTM_ID is not set. Configure repository/environment variable VITE_GTM_ID." >&2
+            exit 1
+          fi
+          npm run build
 
       # Runs a single command using the runners shell
       - name: Sync files
