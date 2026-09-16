@@ -12,6 +12,8 @@ export default defineConfig({
       input: {
         // トップページ（React）
         main: resolve(import.meta.dirname, 'index.html'),
+        // UIコンポーネント用の独立ページ
+        uiComponents: resolve(import.meta.dirname, 'ui-components.html'),
         // デザインテンプレート（素のHTMLのまま。CSS/JSのバンドルだけVIteに任せる）
         template: resolve(import.meta.dirname, '_design_template.html')
       }
