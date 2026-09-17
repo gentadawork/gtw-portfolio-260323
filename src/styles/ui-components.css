@@ -110,8 +110,33 @@
     transition: opacity 150ms ease;
   }
 
+  .ui-button--ripple {
+    position: relative;
+  }
+
   .ui-button:hover {
     opacity: 0.8;
+  }
+
+  .ui-button--ripple:hover {
+    opacity: 1;
+  }
+
+  .ui-button--ripple:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    opacity: 0.5;
+    clip-path: circle(0 at center 100%);
+    transition: 0.5s ease-out;
+  }
+  
+  .ui-button--ripple:hover:before {
+    clip-path: circle(100px at center);
   }
 
   .ui-button--primary {

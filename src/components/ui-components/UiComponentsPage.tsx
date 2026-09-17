@@ -38,6 +38,10 @@ function ButtonSample({ label, variant = 'primary' }: { label: string; variant?:
   return <button className={`ui-button ui-button--${variant}`}>{label}</button>;
 }
 
+function RippleButtonSample({ label, variant = 'primary' }: { label: string; variant?: 'primary' | 'secondary' | 'ghost' }) {
+  return <button className={`ui-button ui-button--ripple ui-button--${variant}`}>{label}</button>;
+}
+
 function BadgeSample({ label, tone = 'info' }: { label: string; tone?: 'info' | 'ok' | 'warning' }) {
   return <span className={`ui-badge ui-badge--${tone}`}>{label}</span>;
 }
@@ -134,9 +138,14 @@ export function UiComponentsPage() {
           description="主要なアクションは目立たせ、補助操作は控えめにまとめます。"
         >
           <div className="ui-button-list">
-            <ButtonSample label="Primary Action" variant="primary" />
+            <ButtonSample label="Primary (Opacity)" variant="primary" />
             <ButtonSample label="Secondary" variant="secondary" />
             <ButtonSample label="Ghost" variant="ghost" />
+          </div>
+          <div className="ui-button-list">
+            <RippleButtonSample label="Primary (Ripple)" variant="primary" />
+            <RippleButtonSample label="Secondary" variant="secondary" />
+            <RippleButtonSample label="Ghost" variant="ghost" />
           </div>
         </ShowcaseSection>
 
