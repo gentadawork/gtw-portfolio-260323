@@ -113,6 +113,20 @@ function FormSample() {
   );
 }
 
+function StepSample() {
+  return (
+    <div className="ui-step-sample">
+      <ol>
+        <li className="ui-step-completed">実行済</li>
+        <li className="ui-step-completed">実行済（長いタイトル）</li>
+        <li className="ui-step-completed">実行済</li>
+        <li className="ui-step-active">現在地</li>
+        <li className="ui-step-pending">未実行</li>
+      </ol>
+    </div>
+  );
+}
+
 export function UiComponentsPage() {
   return (
     <div className="ui-components-page">
@@ -170,7 +184,7 @@ export function UiComponentsPage() {
         </ShowcaseSection>
 
         <ShowcaseSection
-          title="Lists & highlights"
+          title="Lists"
           description="箇条書きは情報量を抑えつつ、重要ポイントを視覚的に追いやすくします。"
         >
           <ListSample />
@@ -181,6 +195,7 @@ export function UiComponentsPage() {
           description="フォームは入力をしやすくしつつ、伝える情報量を最小限にして誤操作を抑えます。"
         >
           <FormSample />
+          <StepSample />
         </ShowcaseSection>
       </main>
       <Footer />

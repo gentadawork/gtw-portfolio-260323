@@ -1,3 +1,7 @@
+:root {
+  --gap-step: .5rem;
+}
+
 @layer components {
   .ui-components-page {
     min-height: 100dvh;
@@ -233,6 +237,80 @@
     display: flex;
     gap: var(--space-medium);
     flex-wrap: wrap;
+  }
+
+  .ui-step-sample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ol:has(.ui-step-completed), ol:has(.ui-step-active), ol:has(.ui-step-pending) {
+    display: flex;
+    row-gap: var(--gap-step);
+    column-gap: var(--gap-step);
+    flex-wrap: wrap;
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  .ui-step-completed,
+  .ui-step-active,
+  .ui-step-pending {
+    margin-block: 0;
+    min-width: 5em;
+    text-align: center;
+    padding: .5rem;
+    margin-inline-end: calc(var(--gap-step) * -1 - 1px);
+  }
+
+  .ui-step-completed:first-child,  /* border-shape 未対応環境での暫定フォールバックデザイン */
+  .ui-step-active:first-child,
+  .ui-step-pending:first-child {
+    border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
+  }
+
+  .ui-step-completed:last-child,  /* border-shape 未対応環境での暫定フォールバックデザイン */
+  .ui-step-active:last-child,
+  .ui-step-pending:last-child {
+    border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
+  }
+
+  .ui-step-completed {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-primary);
+    color: contrast-color(var(--color-cmn-white));
+  }
+
+  .ui-step-active {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: var(--color-cmn-white);
+  }
+
+  .ui-step-pending {
+    background-color: var(--color-cmn-white);
+    border: 1px solid var(--color-primary);
+    color: contrast-color(var(--color-cmn-white));
+  }
+
+  @supports (border-shape: shape(from top left, hline to 100%)) {
+    .ui-step-completed,
+    .ui-step-active,
+    .ui-step-pending {
+      padding: .5rem 1.2rem;
+      border-radius: 0;
+      border-shape: shape(
+        from top left,
+        hline to calc(100% - .5rem),
+        line to right center,
+        line to calc(100% - .5rem) bottom,
+        hline to left,
+        line to .5rem center,
+        close
+      );
+      margin-inline-end: calc(var(--gap-step) * -2 - 1px);
+    }
   }
 
   @media (min-width: 768px) {
