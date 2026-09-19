@@ -175,7 +175,7 @@
 /* 環境由来事象への対策 */
 @layer {
   input[type="text"] {
-    min-width: 0;  /* Firefoxでflexbox/grid下のinput:textが親要素の内側に収まるようにする */
+    min-inline-size: 0;  /* Firefoxでflexbox/grid下のinput:textが親要素の内側に収まるようにする */
   }
 }
 
