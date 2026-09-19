@@ -174,8 +174,20 @@
 
 /* 環境由来事象への対策 */
 @layer {
-  input[type="text"] {
-    min-inline-size: 0;  /* Firefoxでflexbox/grid下のinput:textが親要素の内側に収まるようにする */
+  input:is(
+    :not([type]),
+    [type="text" i],
+    [type="search" i],
+    [type="email" i],
+    [type="tel" i],
+    [type="password" i],
+    [type="month" i],
+    [type="date" i],
+    [type="datetime-local" i]
+  ),
+  textarea {
+    min-inline-size: 0;
+    /* Firefoxでflexbox/grid下の入力要素を親要素の内側に収める */
   }
 }
 
