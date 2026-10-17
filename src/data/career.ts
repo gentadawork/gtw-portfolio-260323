@@ -2,6 +2,10 @@ import type { CareerEntry } from '../types/career';
 
 export const careerEntries: readonly CareerEntry[] = [
   {
+    org: '株式会社コネクティ',
+    events: [{ date: '2026年10月', roles: '入社、フェロー（コーダー）', skills: ['node.js', 'HTML', 'CSS', 'JavaScript', 'AI駆動開発'] }]
+  },
+  {
     org: '株式会社ダンクソフト',
     events: [
       { date: '2026年2月', roles: '退社' },
