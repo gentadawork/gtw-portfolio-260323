@@ -10,7 +10,7 @@ function UiPageHeader() {
           </a>
         </div>
       </div>
-      <div className="updated">updated: 2026-08-06</div>
+      <div className="updated">updated: 2026-10-17</div>
     </header>
   );
 }
