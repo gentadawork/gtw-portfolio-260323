@@ -1,4 +1,4 @@
-name: FTP for gtw-portfolio-260323 to onamaecom
+name: Deploy gtw-portfolio-260323 to onamaecom via SSH
 
 # Controls when the workflow will run
 on:
@@ -7,12 +7,22 @@ on:
     branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
+  # 手動実行時は既定で dry-run（転送・削除を行わず、差分だけをログに出す）
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'rsync を --dry-run で実行する（転送・削除しない）'
+        type: boolean
+        default: true
+
+# デプロイが同時に走ってサーバー上で競合しないようにする
+concurrency:
+  group: deploy-onamaecom
+  cancel-in-progress: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "ftp-deploy". The default job name is "build".
-  ftp-deploy:
+  ssh-deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -43,12 +53,38 @@ jobs:
           fi
           npm run build
 
-      # Runs a single command using the runners shell
+      # デプロイ専用の秘密鍵と、事前に ssh-keyscan で取得したサーバーの公開鍵を配置する
+      # known_hosts を固定することで、StrictHostKeyChecking を無効にせずに済む
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      # dist/ の内容をサーバーと同期する（--delete でサーバー側にしかないファイルは削除される）
+      # .htaccess と .well-known/ はサーバー側で管理されている可能性があるため同期対象外にしている
       - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          local-dir: ./dist/
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOY_DIR: ${{ secrets.DEPLOY_DIR }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          if [ -z "${DEPLOY_DIR}" ]; then
+            echo "DEPLOY_DIR is not set. Configure repository secret DEPLOY_DIR." >&2
+            exit 1
+          fi
+          rsync -rlptvz --delete --chmod=D755,F644 \
+            --exclude='.htaccess' --exclude='.well-known/' \
+            ${DRY_RUN} \
+            -e "ssh -i ${HOME}/.ssh/deploy_key -p ${SSH_PORT} -o BatchMode=yes -o StrictHostKeyChecking=yes" \
+            ./dist/ "${SSH_USER}@${SSH_HOST}:${DEPLOY_DIR}/"
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

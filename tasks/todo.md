@@ -1,3 +1,18 @@
+# デプロイを FTP から SSH 鍵認証（rsync over SSH）へ移行
+
+## 計画
+- [x] お名前.com RS の SSH 仕様を調査する（鍵認証のみ・ポートは非22・国外アクセス制限に注意）
+- [x] サーバーに rsync があること、公開ディレクトリのパスを確認する（ユーザー側で実施）
+- [x] `main.yml` を rsync over SSH に書き換え、手動実行時は既定で dry-run にする
+- [x] README のデプロイ節を更新する
+- [ ] Secrets 登録後、作業ブランチで dry-run を実行し、転送・削除予定を確認する（ユーザー側で実施）
+- [ ] 本番実行・マージ後、FTP 関連の Secrets と FTP アカウントを整理する
+
+## レビュー
+- 外部 Action に依存せず、ランナー標準の `ssh` / `rsync` だけで構成。`known_hosts` を Secret で固定し、`StrictHostKeyChecking=yes` を維持。
+- `--delete` 付きのため、`.htaccess` と `.well-known/` は除外。`DEPLOY_DIR` が空なら即失敗させ、誤ってホーム直下へ同期しないようにした。
+- rsync の引数展開（dry-run の有無）を Bash 上で確認済み。ローカルに actionlint がないため、ワークフロー自体の検証は Actions 上の dry-run 実行で行う。
+
 # Issue #37: 来歴の更新
 
 ## 計画
