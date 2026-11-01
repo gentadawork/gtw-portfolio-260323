@@ -40,7 +40,12 @@ src/
 
 ## デプロイ
 
-`master` への push で GitHub Actions が走り、`npm run build` の成果物（`./dist/`）をFTPでアップロードします。ビルド前提になっているため、`package-lock.json` は必ずコミットしてください（`npm ci` が失敗します）。
+`master` への push で GitHub Actions が走り、`npm run build` の成果物（`./dist/`）を SSH 鍵認証（rsync over SSH）でサーバーに同期します。ビルド前提になっているため、`package-lock.json` は必ずコミットしてください（`npm ci` が失敗します）。
+
+- 必要な Secrets: `SSH_HOST` / `SSH_PORT` / `SSH_USER` / `SSH_PRIVATE_KEY` / `SSH_KNOWN_HOSTS` / `DEPLOY_DIR`（いずれもお名前.com RS コントロールパネルの「サーバー」→「SSH」→ Key の「詳細」で確認）
+- 同期は `--delete` 付きのため、サーバー側にしかないファイルは削除されます（`.htaccess` と `.well-known/` は除外）。
+- Actions タブから手動実行すると既定で dry-run になり、転送・削除の予定だけをログに出します。
+- お名前.com RS の「国外アクセス制限」が ON だと GitHub のランナーから接続できません。
 
 ## 興味関心のコンテンツに関する注意事項
 
